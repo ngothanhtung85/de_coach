@@ -89,7 +89,8 @@ def load(df):
 def etl_flow():
     df = extract()
     df = transform(df)
+    df.to_csv("clean_data.csv", index=False)
     load(df)
-
+    
 if __name__ == "__main__":
     etl_flow()
